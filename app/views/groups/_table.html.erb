@@ -1,0 +1,38 @@
+<table class="table table-hover" id="ajax_table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Salle</th>
+      <th>Tache</th>
+      <th>Membres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td><%= group.salle %></td>
+      <td><%= group.tache %></td>
+      <td></td>
+      <td><%= link_to 'Show', group %></td>
+      <td><%= link_to 'Edit', edit_group_path(group) %></td>
+      <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% group.people.each do |person| %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= person.name %>
+      <%= person.sensei? ? " - Sensei" : "" %></td>
+      <td></td>
+            <td><%= best_in_place person, :group_id, :as => :select, :collection => {"nil" => "Sans groupe"} %></td>
+      <td></td>
+      <td></td>
+    </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>

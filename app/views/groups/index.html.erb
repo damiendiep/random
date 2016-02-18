@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Groups</h1>
+<%= render 'groups/table'%>
+  <br>
+
+  <%= link_to 'New Group', new_group_path %>
+<%= link_to 'Random' ,tata_path, remote: :true %>
+
+  <br>
+
+  <h1>Listing People</h1>
+
+<%= render 'groups/tablepeople' %>
+
+  <br>
+
+  <%= link_to 'New Person', new_person_path %>
