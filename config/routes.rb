@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :groups
+  resources :people
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'groups#index'
+  get 'randommmm' => 'groups#random', as: :tata 
+  get 'nullee/:id' => 'groups#nullee', as: :test
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

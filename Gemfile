@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
@@ -38,10 +39,14 @@ group :development, :test do
 end
 
 group :development do
+  gem'quiet_assets'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  gem 'pry'
+  gem 'better_errors'
+  gem 'tipsy-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
+gem 'best_in_place'
+ gem 'responders', '~> 2.0'
